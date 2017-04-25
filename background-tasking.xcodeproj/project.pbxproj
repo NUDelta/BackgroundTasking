@@ -14,6 +14,7 @@
 		00BDBE521EB0036D00FA1F1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00BDBE501EB0036D00FA1F1F /* LaunchScreen.storyboard */; };
 		00BDBE5D1EB0036D00FA1F1F /* background_taskingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BDBE5C1EB0036D00FA1F1F /* background_taskingTests.swift */; };
 		00BDBE681EB0036D00FA1F1F /* background_taskingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BDBE671EB0036D00FA1F1F /* background_taskingUITests.swift */; };
+		00BDBE771EB0046000FA1F1F /* BackgroundTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BDBE761EB0046000FA1F1F /* BackgroundTaskManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		00BDBE631EB0036D00FA1F1F /* background-taskingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "background-taskingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BDBE671EB0036D00FA1F1F /* background_taskingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = background_taskingUITests.swift; sourceTree = "<group>"; };
 		00BDBE691EB0036D00FA1F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00BDBE751EB0046000FA1F1F /* background-tasking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "background-tasking-Bridging-Header.h"; sourceTree = "<group>"; };
+		00BDBE761EB0046000FA1F1F /* BackgroundTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTaskManager.m; sourceTree = "<group>"; };
+		00BDBE781EB004B500FA1F1F /* BackgroundTaskManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundTaskManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,9 @@
 				00BDBE4E1EB0036D00FA1F1F /* Assets.xcassets */,
 				00BDBE501EB0036D00FA1F1F /* LaunchScreen.storyboard */,
 				00BDBE531EB0036D00FA1F1F /* Info.plist */,
+				00BDBE761EB0046000FA1F1F /* BackgroundTaskManager.m */,
+				00BDBE781EB004B500FA1F1F /* BackgroundTaskManager.h */,
+				00BDBE751EB0046000FA1F1F /* background-tasking-Bridging-Header.h */,
 			);
 			path = "background-tasking";
 			sourceTree = "<group>";
@@ -194,7 +201,13 @@
 					00BDBE431EB0036D00FA1F1F = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W4E2C6X642;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					00BDBE571EB0036D00FA1F1F = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -263,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BDBE4A1EB0036D00FA1F1F /* ViewController.swift in Sources */,
+				00BDBE771EB0046000FA1F1F /* BackgroundTaskManager.m in Sources */,
 				00BDBE481EB0036D00FA1F1F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,11 +431,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W4E2C6X642;
 				INFOPLIST_FILE = "background-tasking/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Delta-Lab.background-tasking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "background-tasking/background-tasking-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,11 +447,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = W4E2C6X642;
 				INFOPLIST_FILE = "background-tasking/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Delta-Lab.background-tasking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "background-tasking/background-tasking-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
